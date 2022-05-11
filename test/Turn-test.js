@@ -63,4 +63,18 @@ describe('Turn', function() {
         expect(turn2.evaluateGuess()).to.equal(true);
       });
 
+      it('should give feedback about the user\'s guess', function() {
+        const card = new Card(23, "Which prototype method can make a copy of a pre-existing object or merge two or more objects together?", ["Object.assign()", "Object.keys()", "filter()"], "Object.assign()");
+        const turn1 = new Turn("filter()", card);
+        const turn2 = new Turn("Object.assign()", card);
+
+        turn1.evaluateGuess();
+        turn1.giveFeedback();
+
+        expect(turn1.giveFeedback()).to.equal('incorrect!');
+    
+        turn2.evaluateGuess();
+        turn2.giveFeedback();
+        expect(turn2.giveFeedback()).to.equal('correct!');
+      });
 });
