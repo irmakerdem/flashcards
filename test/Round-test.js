@@ -80,7 +80,7 @@ describe('Round', function() {
         expect(round.incorrectGuesses).to.deep.equal([]);
     });
 
-    it('should be able to take turn ', () => {
+    it('should be able to store incorrect guesses', () => {
         const card1 = new Card(2, "What is a comma-separated list of related values?", ["array", "object", "function"], "array");
         const card2 = new Card(16, "What does the callback function for reduce() return?", ["the accumulator", "the current element", "the initializer"], "the accumulator");
         const card3 = new Card(19, "What does the callback function for filter() return?", ["boolean", "an array of the same length", "a single value of any data type"], "boolean");
@@ -89,14 +89,36 @@ describe('Round', function() {
         const deck = new Deck([card1, card2, card3, card4, card5]);
         const round = new Round(deck);
         
-        expect(round.takeTurn("function")).to.equal('incorrect!');
+        round.takeTurn("function");
         expect(round.incorrectGuesses).to.deep.equal([2]);
-        // expect(round.turns).to.equal(1);
+    });
 
-        // round.takeTurn();
-        // expect(round.takeTurn("the current element")).to.equal('correct!');
-        // expect(round.incorrectGuesses).to.deep.equal([16]);
+    it('should be able to display that the guess is incorrect', () => {
+        const card1 = new Card(2, "What is a comma-separated list of related values?", ["array", "object", "function"], "array");
+        const card2 = new Card(16, "What does the callback function for reduce() return?", ["the accumulator", "the current element", "the initializer"], "the accumulator");
+        const card3 = new Card(19, "What does the callback function for filter() return?", ["boolean", "an array of the same length", "a single value of any data type"], "boolean");
+        const card4 = new Card(24, "Object.assign() can take in an indefinite amount of arguments", ["true", "false"], "true");
+        const card5 = new Card(29, "map() takes in two optional arguments: the index of the current element, and the array that map was called upon", ["true", "false"], "true");
+        const deck = new Deck([card1, card2, card3, card4, card5]);
+        const round = new Round(deck);
 
+        expect(round.takeTurn("function")).to.equal('incorrect!');
+    });
+
+    it('should be able to display that the guess correct', () => {
+        const card1 = new Card(2, "What is a comma-separated list of related values?", ["array", "object", "function"], "array");
+        const card2 = new Card(16, "What does the callback function for reduce() return?", ["the accumulator", "the current element", "the initializer"], "the accumulator");
+        const card3 = new Card(19, "What does the callback function for filter() return?", ["boolean", "an array of the same length", "a single value of any data type"], "boolean");
+        const card4 = new Card(24, "Object.assign() can take in an indefinite amount of arguments", ["true", "false"], "true");
+        const card5 = new Card(29, "map() takes in two optional arguments: the index of the current element, and the array that map was called upon", ["true", "false"], "true");
+        const deck = new Deck([card1, card2, card3, card4, card5]);
+        const round = new Round(deck);
+
+        expect(round.takeTurn("array")).to.equal('correct!');
+        expect(round.takeTurn("the accumulator")).to.equal('correct!');
+        expect(round.takeTurn("boolean")).to.equal('correct!');
+        expect(round.takeTurn("true")).to.equal('correct!');
+        expect(round.takeTurn("true")).to.equal('correct!');
     });
 
 });
