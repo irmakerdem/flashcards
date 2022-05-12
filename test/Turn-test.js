@@ -31,7 +31,7 @@ describe('Turn', () => {
     }); 
 
     it('should store a current card as an object', () => {
-      expect(turn1.card).to.be.an.instanceof(Card)
+      expect(turn1.card).to.be.an.instanceof(Card);
     }); 
 
     it('should return the user\'s guess', function() {
@@ -53,6 +53,7 @@ describe('Turn', () => {
         expect(turn1.evaluateGuess()).to.equal(false);
     
         turn2.evaluateGuess();
+
         expect(turn2.evaluateGuess()).to.equal(true);
       });
 
@@ -64,6 +65,7 @@ describe('Turn', () => {
     
         turn2.evaluateGuess();
         turn2.giveFeedback();
+        
         expect(turn2.giveFeedback()).to.equal('correct!');
       });
 });
