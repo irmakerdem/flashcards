@@ -13,7 +13,6 @@ describe('Deck', () => {
         card3 = new Card(19, "What does the callback function for filter() return?", ["boolean", "an array of the same length", "a single value of any data type"], "boolean");
         card4 = new Card(24, "Object.assign() can take in an indefinite amount of arguments", ["true", "false"], "true");
         card5 = new Card(29, "map() takes in two optional arguments: the index of the current element, and the array that map was called upon", ["true", "false"], "true");
-    
         deck = new Deck([card1, card2, card3, card4, card5]); 
     });
 
