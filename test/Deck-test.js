@@ -41,6 +41,8 @@ describe('Deck', function() {
 
         const deck = new Deck([card1, card2, card3, card4, card5]); 
 
+        expect(deck.cards).to.be.an('array');
+        expect(deck.cards).to.deep.equal([card1, card2, card3, card4, card5]);
         expect(deck.countCards()).to.equal(5);
       }); 
 
