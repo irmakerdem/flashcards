@@ -20,6 +20,9 @@ class Round {
         this.returnCurrentCard();
         return turn.giveFeedback();
     }
+    calculatePercentCorrect() {
+        
+    }
 }
 
 module.exports = Round;
