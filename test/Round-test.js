@@ -50,7 +50,7 @@ describe('Round', function() {
         expect(round.turns).to.equal(0);
     });
 
-    it('should be able to increment number of turns by 1', () => {
+    it('should be able to increment number of turns', () => {
         const card1 = new Card(2, "What is a comma-separated list of related values?", ["array", "object", "function"], "array");
         const card2 = new Card(16, "What does the callback function for reduce() return?", ["the accumulator", "the current element", "the initializer"], "the accumulator");
         const card3 = new Card(19, "What does the callback function for filter() return?", ["boolean", "an array of the same length", "a single value of any data type"], "boolean");
@@ -60,8 +60,11 @@ describe('Round', function() {
         const round = new Round(deck);
         
         round.takeTurn();
+        round.takeTurn();
+        round.takeTurn();
+        round.takeTurn();
 
-        expect(round.turns).to.equal(1);
+        expect(round.turns).to.equal(4);
     });
 
 });
