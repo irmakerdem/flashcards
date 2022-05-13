@@ -23,7 +23,6 @@ class Game {
     })
     const deck = new Deck(deckData);
     const round = new Round(deck);
-
     this.printMessage(deck, round);
     this.printQuestion(round);
   }
