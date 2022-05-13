@@ -5,7 +5,6 @@
 - [Technologies](#technologies)
 - [Set Up](#set-up)
 - [Features](#features)
-- [Future Features](#future-features)
 - [Reflection](#reflection)
 - [Contributors](#contributors)
 - [Project Specifications](#project-specifications)
@@ -33,9 +32,6 @@ Learn about object-oriented programming concepts through this flashcards game!! 
 - User can see whether their answer is correct or incorrect
 - User can see their final score as a percentage if they go through all 30 cards
 - At any point in the game, user can exit using **control + c**
-
-### Future Features
-- 
 
 ### Reflection
 - The first challenge was getting comfortable writing tests from scratch based on the rubric to then write implementation code for. It was difficult to get used to using 'expect' syntax.
