@@ -31,11 +31,7 @@ describe('Game', () => {
     }); 
 
     it('should keep track of rounds', () => {
-        expect().to.equal();
-    }); 
-
-    it('should be able to start game', () => {
-        expect().to.equal();
+        expect(game.currentRound).to.equal(0);
     }); 
 
 });

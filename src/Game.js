@@ -1,8 +1,9 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-// const Card = require('../src/Card');
-const Card = require('./Card');
+const Card = require('../src/Card');
+const Deck = require('../src/Deck');
+const Round = require('../src/Round');
 
 class Game {
   constructor() {
@@ -19,17 +20,16 @@ class Game {
   }
 
   start() {
-    // .map to create cards
-    const deckData = prototypeQuestions.map((cardData) =>
-      // console.log(cardData.id)
-    new Card(cardData.id, cardData.question, cardData.answers, cardData.correctAnswer)
-    )
-    console.log(deckData)
-    //place cards in deck
-    // this.printMessage(deck, round);
-    // this.printQuestion(round);
-  }
+    const deckData = prototypeQuestions.map((cardData) => {
+    const card = new Card(cardData.id, cardData.question, cardData.answers, cardData.correctAnswer);
+    return card;
+    })
+    const deck = new Deck(deckData);
+    const round = new Round(deck);
 
+    this.printMessage(deck, round);
+    this.printQuestion(round);
+  }
 }
 
 module.exports = Game;
