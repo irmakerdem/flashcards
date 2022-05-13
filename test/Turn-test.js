@@ -48,11 +48,11 @@ describe('Turn', () => {
       it('should check if the user guessed correct answer', function() {
         turn1.evaluateGuess();
 
-        expect(turn1.evaluateGuess()).to.equal(false);
+        expect(turn1.evaluateGuess()).to.be.false;
     
         turn2.evaluateGuess();
 
-        expect(turn2.evaluateGuess()).to.equal(true);
+        expect(turn2.evaluateGuess()).to.be.true;
       });
 
       it('should give feedback about the user\'s guess', function() {
